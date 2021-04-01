@@ -4,5 +4,5 @@ NeuroGen keeps all its common utilities in the *Core* module. The core is respon
 
 Here are the following core modules available as of now:
 
-- [Database Module](/core/database-module.html)
-- [Main Module](/core/main-module.html)
+- [Database Module](./database-module.html)
+- [Main Module](./main-module.html)

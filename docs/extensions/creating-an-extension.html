@@ -171,27 +171,27 @@
 <p>Conventionally, the name of the extension's main GameObject is kept the same as the extension itself.</p>
 </blockquote>
 <p>The main GameObject may look something like this:</p>
-<p><img src="/images/extension_game_object.png" alt="" title="Extension's Main GameObject" /></p>
+<p><img src="../images/extension_game_object.png" alt="" title="Extension's Main GameObject" /></p>
 <p>Conventionally, the GameObject representing the extension is kept as the child of a GameObject named <code>Extensions</code> in the MainScene, like this:</p>
-<p><img src="/images/extension_game_object_hierarchy.png" alt="" title="Extension's GameObject Hierarchy" /></p>
+<p><img src="../images/extension_game_object_hierarchy.png" alt="" title="Extension's GameObject Hierarchy" /></p>
 <h2 id="registering-the-extension-in-the-core"><a class="header" href="#registering-the-extension-in-the-core">Registering the Extension in the Core</a></h2>
-<p>NeuroGen initiates all its operations through the <a href="/core/main-module.html">Main module</a>. This module holds and activates the GameObject of the selected extension automatically. However, to let the Main module do so, you need to add the extension's GameObject to the list of extensions in the Main module. This way, the core of NeuroGen, which the Main module is part of, is aware of the extension's existence.</p>
+<p>NeuroGen initiates all its operations through the <a href="../core/main-module.html">Main module</a>. This module holds and activates the GameObject of the selected extension automatically. However, to let the Main module do so, you need to add the extension's GameObject to the list of extensions in the Main module. This way, the core of NeuroGen, which the Main module is part of, is aware of the extension's existence.</p>
 <p>This is how the &quot;Extensions&quot; list of the Main module looks like after <code>Dawkins</code> is added:</p>
-<p><img src="/images/extensions_list.png" alt="" title="Extension's List" /></p>
+<p><img src="../images/extensions_list.png" alt="" title="Extension's List" /></p>
 <h2 id="writing-the-scripts"><a class="header" href="#writing-the-scripts">Writing the Scripts</a></h2>
 <p>All the scripts associated with the extension conventionally reside in its own directory in the <code>/Assets/Extensions</code> directory, where the leading forward-slash indicates the root of NeuroGen's source directory.</p>
 <p>This is how the <code>/Assets/Extensions</code> directory may look like after creating a directory for <code>Dawkins</code>:</p>
-<p><img src="/images/extensions_directory.png" alt="" title="Extension's Directory" /></p>
+<p><img src="../images/extensions_directory.png" alt="" title="Extension's Directory" /></p>
 <blockquote>
 <p>It's recommended to wrap all the scripts of your extension in its own namespace. Whilst naming a namespace, make sure it has least possibility of any <a href="https://en.wikipedia.org/wiki/Naming_collision">naming collision</a>. </p>
 </blockquote>
 <p>Since the extension's main GameObject is activated when the extension is selected to take control of the training, all the scripts that must run to initiate training should be attached to it as its components.</p>
 <p>For <code>Dawkins</code>, let's create a script called <code>Trainer</code> and keep it inside the <code>/Assets/Extensions/Dawkins</code> directory:</p>
-<p><img src="/images/trainer_script_directory.png" alt="" title="Trainer Script's Directory" /></p>
+<p><img src="../images/trainer_script_directory.png" alt="" title="Trainer Script's Directory" /></p>
 <p>This is how the contents of the script may look like:</p>
-<p><img src="/images/trainer_script_content.png" alt="" title="Trainer Script's Content" /></p>
+<p><img src="../images/trainer_script_content.png" alt="" title="Trainer Script's Content" /></p>
 <p>Let's attach it to the extension's main GameObject so its <code>Start</code> method gets invoked whenever the extension is activated. This is where we can write code to begin the training:</p>
-<p><img src="/images/attaching_trainer_script.png" alt="" title="Attaching Trainer Script" /></p>
+<p><img src="../images/attaching_trainer_script.png" alt="" title="Attaching Trainer Script" /></p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>Now we have the foundation of our extension, you can develop it to train cars, however you like, based on your algorithm.</p>
 
@@ -232,6 +232,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

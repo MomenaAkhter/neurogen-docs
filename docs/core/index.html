@@ -167,8 +167,8 @@
 <p>NeuroGen keeps all its common utilities in the <em>Core</em> module. The core is responsible for handling extensions, database integration, etc.</p>
 <p>Here are the following core modules available as of now:</p>
 <ul>
-<li><a href="/core/database-module.html">Database Module</a></li>
-<li><a href="/core/main-module.html">Main Module</a></li>
+<li><a href="./database-module.html">Database Module</a></li>
+<li><a href="./main-module.html">Main Module</a></li>
 </ul>
 
                     </main>
@@ -208,6 +208,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

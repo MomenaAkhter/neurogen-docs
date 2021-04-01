@@ -10,19 +10,19 @@ Your extension must have at least one [GameObject](https://docs.unity3d.com/Scri
 
 The main GameObject may look something like this:
 
-![](/images/extension_game_object.png "Extension's Main GameObject")
+![](../images/extension_game_object.png "Extension's Main GameObject")
 
 Conventionally, the GameObject representing the extension is kept as the child of a GameObject named `Extensions` in the MainScene, like this:
 
-![](/images/extension_game_object_hierarchy.png "Extension's GameObject Hierarchy")
+![](../images/extension_game_object_hierarchy.png "Extension's GameObject Hierarchy")
 
 ## Registering the Extension in the Core
 
-NeuroGen initiates all its operations through the [Main module](/core/main-module.html). This module holds and activates the GameObject of the selected extension automatically. However, to let the Main module do so, you need to add the extension's GameObject to the list of extensions in the Main module. This way, the core of NeuroGen, which the Main module is part of, is aware of the extension's existence.
+NeuroGen initiates all its operations through the [Main module](../core/main-module.html). This module holds and activates the GameObject of the selected extension automatically. However, to let the Main module do so, you need to add the extension's GameObject to the list of extensions in the Main module. This way, the core of NeuroGen, which the Main module is part of, is aware of the extension's existence.
 
 This is how the "Extensions" list of the Main module looks like after `Dawkins` is added:
 
-![](/images/extensions_list.png "Extension's List")
+![](../images/extensions_list.png "Extension's List")
 
 ## Writing the Scripts
 
@@ -30,7 +30,7 @@ All the scripts associated with the extension conventionally reside in its own d
 
 This is how the `/Assets/Extensions` directory may look like after creating a directory for `Dawkins`:
 
-![](/images/extensions_directory.png "Extension's Directory")
+![](../images/extensions_directory.png "Extension's Directory")
 
 > It's recommended to wrap all the scripts of your extension in its own namespace. Whilst naming a namespace, make sure it has least possibility of any [naming collision](https://en.wikipedia.org/wiki/Naming_collision). 
 
@@ -38,15 +38,15 @@ Since the extension's main GameObject is activated when the extension is selecte
 
 For `Dawkins`, let's create a script called `Trainer` and keep it inside the `/Assets/Extensions/Dawkins` directory:
 
-![](/images/trainer_script_directory.png "Trainer Script's Directory")
+![](../images/trainer_script_directory.png "Trainer Script's Directory")
 
 This is how the contents of the script may look like:
 
-![](/images/trainer_script_content.png "Trainer Script's Content")
+![](../images/trainer_script_content.png "Trainer Script's Content")
 
 Let's attach it to the extension's main GameObject so its `Start` method gets invoked whenever the extension is activated. This is where we can write code to begin the training:
 
-![](/images/attaching_trainer_script.png "Attaching Trainer Script")
+![](../images/attaching_trainer_script.png "Attaching Trainer Script")
 
 ## Conclusion
 
